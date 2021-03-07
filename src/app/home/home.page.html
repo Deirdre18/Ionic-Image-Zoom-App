@@ -1,20 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+    <!-- Background drop while zoom -->
+    <div *ngIf="zoomActive" class="backdrop" [style.opacity]="zoomScale"></div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-card *ngFor="let img of [1, 2, 3, 4]" class="image-card" #card>
+        <ion-slides class="image-slide" [options]="sliderZoomOpts" #zoomslides>
+            <ion-slide>
+                <div class="swiper-zoom-container" (touchstart)="touchStart(card)"
+                    (touchend)="touchEnd(zoomslides, card)">
+                    <img src="assets/img/{{ img }}.png">
+                </div>
+            </ion-slide>
+        </ion-slides>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <ion-card-content>
+            Almost like Instagram
+        </ion-card-content>
+    </ion-card>
 </ion-content>
