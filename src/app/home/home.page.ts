@@ -1,3 +1,5 @@
+// credit to https://github.com/jonathanpperry/ionic-image-gallery-zoom for using code for this page!
+
 import { ChangeDetectorRef, Component } from "@angular/core";
 import { IonSlides, ModalController } from "@ionic/angular";
 import { ImageModalPage } from "../image-modal/image-modal.page";
