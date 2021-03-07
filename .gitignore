@@ -29,3 +29,14 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+/e2e/
+/android
+/resources/android
+
+/resources/
+
+#google-services
+google-services.json
+
+#whitesource
+/.whitesource
